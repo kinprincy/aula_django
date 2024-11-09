@@ -16,10 +16,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import fproduto
+from .views import fproduto, Fcadproduto, salvar, exibir, excluir
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', fproduto)
+    path('', fproduto),
+    path('Fcadproduto/', Fcadproduto, name='Fcadproduto'),
+    path('salvar/', salvar, name='salvar'),
+    path('exibir/', exibir, name='exibir'),
+    path('excluir/', excluir, name='excluir')
 
 ]

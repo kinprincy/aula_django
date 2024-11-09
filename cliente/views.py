@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Cliente
 # Create your views here.
 
@@ -10,4 +10,9 @@ def Fcadcliente(request):
     return render(request, "cad_cliente.html")
 
 def salvar(request):
-    return render(request, "rel_cliente.html")
+    vnome = request.POST.get("nome")
+    vtelefone = request.POST.get("telefone")
+    vemail = request.POST.get("email")
+    if vnome:
+        Cliente.objects.create(nome=vnome, telefone=vtelefone, email=vemail)
+    return redirect(fcliente)
