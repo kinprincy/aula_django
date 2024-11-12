@@ -29,6 +29,11 @@
       <td>{{cliente.nome}}</td>
       <td>{{cliente.telefone}}</td>
       <td>{{cliente.email}}</td>
+      <td>
+        <a href="{% url 'exibir_cliente' cliente.id %}"><button type="button" class="btn btn-info">Editar</button></a>
+        <a href="{% url 'excluir_cliente' cliente.id %}"><button type="button" class="btn btn-info">Excluir</button></a>
+
+      </td>
     </tr>
     {% endfor %}
   </tbody>

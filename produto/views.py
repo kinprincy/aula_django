@@ -20,8 +20,23 @@ def salvar(request):
 
 def exibir(request, id):
     produto = Produto.objects.get(id=id)
+    return render(request, "update_produto.html", {"produto": produto})
+
 
 def excluir(request, id):
+    produto = Produto.objects.get(id=id)
+    produto.delete()
+    return redirect(fproduto)
 
-    produto = Produto.objects.create(id=id)
-
+def update(request, id):
+    vnome = request.POST.get("nome")
+    vdescricao = request.POST.get("descricao")
+    vpreco = request.POST.get("preco")
+    vquantidade = request.POST.get("quantidade")
+    produto = Produto.objects.get(id=id)
+    produto.nome = vnome
+    produto.descricao = vdescricao
+    produto.preco = vpreco
+    produto.quantidade = vquantidade
+    produto.save()
+    return redirect(fproduto)
