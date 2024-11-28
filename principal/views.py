@@ -6,3 +6,6 @@ def findex(request):
 
 def fhistoria(request):
     return render(request, "historia.html")
+
+def fcelulares(request):
+    return render(request, "celulares.html")

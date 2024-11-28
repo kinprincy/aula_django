@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+    <title>Loja de Produtos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .produto {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 15px;
+            width: 250px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .produto:hover {
+            transform: translateY(-10px);
+        }
+
+        .produto img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .produto h2 {
+            font-size: 18px;
+            margin: 15px 0;
+        }
+
+        .produto .preco {
+            font-size: 20px;
+            font-weight: bold;
+            color: #007BFF;
+        }
+
+        .produto button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .produto button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+           <a class="nav-link" href="{% url 'findex' %}" style="background-color: black; color: white;" >Home</a>
+           <a class="nav-link" href="{% url 'fhistoria' %}" style="background-color: black; color: white;" >Nossa Historia</a>
+           <a class="nav-link" href="{% url 'fcelulares' %}" style="background-color: black; color: white;" >Produtos</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+
+      </li>
+
+    </ul>
+  </div>
+         <form class="from-inline my-2 my-lg-0" action="{% url 'flogin' %}" type="background-color: black; color: white;">
+        <button class="btn btn-primary" type="submit " type="background-color: black; color: white;">Login</button>
+    </form>
+</nav>
+
+    <header>
+        <h1>Loja de Produtos</h1>
+    </header>
+
+    <div class="container">
+        <!-- Produto 1 -->
+        <div class="produto">
+            <img src="imagens/image_violao.jpg.jpg" alt="Violão">
+            <h2>Produto 1</h2>
+            <p class="preco">R$ 399,99</p>
+            <button>Comprar</button>
+        </div>
+
+        <!-- Produto 2 -->
+        <div class="produto">
+            <img src="imagens/image_sucoL.jpg.jpg" alt="Suco de Laranja">
+            <h2>Produto 2</h2>
+            <p class="preco">R$ 149,90</p>
+            <button>Comprar</button>
+        </div>
+
+        <!-- Produto 3 -->
+        <div class="produto">
+            <img src="https://via.placeholder.com/250" alt="Produto 3">
+            <h2>Produto 3</h2>
+            <p class="preco">R$ 79,50</p>
+            <button>Comprar</button>
+        </div>
+
+        <!-- Produto 4 -->
+        <div class="produto">
+            <img src="imagens/imagen_kurama.jpg.jpg" alt="Kurama">
+            <h2>Produto 4</h2>
+            <p class="preco">R$ 120.000,00</p>
+            <button>Comprar</button>
+        </div>
+
+        <!-- Produto 5 -->
+        <div class="produto">
+            <img src="imagens/image_caos.jpg.jpg" alt="Lamina do Caos">
+            <h2>Produto 5</h2>
+            <p class="preco">R$ 1999.999,99</p>
+            <button>Comprar</button>
+        </div>
+    </div>
+
+</body>
+</html>

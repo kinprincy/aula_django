@@ -11,8 +11,9 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-           <a class="nav-link" href="{% url 'findex' %}"  >Home</a>
-           <a class="nav-link" href="{% url 'fhistoria' %}" >Nossa Historia</a>
+           <a class="nav-link" href="{% url 'findex' %}" style="background-color: black; color: white;" >Home</a>
+           <a class="nav-link" href="{% url 'fhistoria' %}" style="background-color: black; color: white;" >Nossa Historia</a>
+           <a class="nav-link" href="{% url 'fcelulares' %}" style="background-color: black; color: white;" >Produtos</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -24,8 +25,11 @@
 
     </ul>
   </div>
+         <form class="from-inline my-2 my-lg-0" action="{% url 'flogin' %}" type="background-color: black; color: white;">
+        <button class="btn btn-primary" type="submit " type="background-color: black; color: white;">Login</button>
+    </form>
 </nav>
-    <h1 class="text-center">Acesso</h1>
+    <h1 class="text-center"></h1>
 
     <br>
 
@@ -42,46 +46,6 @@
       <img class="d-block w-100" src="{% static 'img/image_violao.jpg.jpg' %}" alt="Violão" style=" height: 700px;">
     </div>
   </div>
-     <div class="carousel-item">
-      <img class="d-block w-100" src="{% static 'img/image_sidadoes.jpg.jpg' %}" alt="Sidadões" style=" height: 700px;">
-    </div>
-  </div>
-      <div class="carousel-item">
-      <img class="d-block w-100" src="{% static 'img/image_radiacao.jpg.jpg' %}" alt="Radiação" style=" height: 700px;">
-    </div>
-  </div>
-      <div class="carousel-item">
-      <img class="d-block w-100" src="{% static 'img/image_nuven_voadora.jpg.jpg' %}" alt="Nuvem Voadora" style=" height: 700px;">
-    </div>
-  </div>
-      <div class="carousel-item">
-      <img class="d-block w-100" src="{% static 'img/image_katanaD.jpg.jpg' %}" alt="Katana de de Aço Japones" style=" height: 700px;">
-    </div>
-  </div>
-      <div class="carousel-item">
-      <img class="d-block w-100" src="{% static 'img/image_espada_lobo.jpg.jpg' %}" alt="Espada com cabo de Lobo" style=" height: 700px;">
-    </div>
-  </div>
-      <div class="carousel-item">
-      <img class="d-block w-100" src="{% static 'img/image_cogumelo.jpg.jpg' %}" alt="Cogumelo" style=" height: 700px;">
-    </div>
-  </div>
-      <div class="carousel-item">
-      <img class="d-block w-100" src="{% static 'img/image_chapel.jpg.jpg' %}" alt="Chapel de Palha" style=" height: 700px;">
-    </div>
-  </div>
-      <div class="carousel-item">
-      <img class="d-block w-100" src="{% static 'img/image_carga.jpg.jpg' %}" alt="Carga de Armamento Autobots" style=" height: 700px;">
-    </div>
-  </div>
-      <div class="carousel-item">
-      <img class="d-block w-100" src="{% static 'img/image_caos.jpg.jpg' %}" alt="Laminas dos Caos" style=" height: 700px;">
-    </div>
-  </div>
-      <div class="carousel-item">
-      <img class="d-block w-100" src="{% static 'img/image_biblia.jpg.jpg' %}" alt="Biblia Sagrada" style=" height: 700px;">
-    </div>
-  </div>
 
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color:red; border-color:blue; color:white"></span>
@@ -92,6 +56,9 @@
     <span class="sr-only">Próximo</span>
   </a>
 </div>
+
+
+
 
      <!-- JavaScript (Opcional) -->
     <!-- jQuery primeiro, depois Popper.js, depois Bootstrap JS -->

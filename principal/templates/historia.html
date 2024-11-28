@@ -2,17 +2,189 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <a href="{% url 'findex' %}">Home</a>
-    <a href="{% url 'fhistoria' %}">Nossa Historia</a>
 
 
-    ESSA É A HISTORIA DA LOJA
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+           <a class="nav-link" href="{% url 'findex' %}" style="background-color: black; color: white;" >Home</a>
+           <a class="nav-link" href="{% url 'fhistoria' %}" style="background-color: black; color: white;" >Nossa Historia</a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+
+      </li>
+
+    </ul>
+  </div>
+         <form class="from-inline my-2 my-lg-0" action="{% url 'flogin' %}" type="background-color: black; color: white;">
+        <button class="btn btn-primary" type="submit " type="background-color: black; color: white;">Login</button>
+    </form>
+</nav>
+
+
+
+
+    <title>Compre Mais - A História Épica</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .container {
+            padding: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+        }
+
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+
+        .story-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .epic-heading {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 40px;
+            color: #007BFF;
+        }
+
+        .subheading {
+            font-size: 20px;
+            margin-top: 30px;
+            color: #555;
+            text-align: center;
+        }
+
+        .testimonial {
+            background-color: #e2e2e2;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+        }
+
+        .testimonial p {
+            font-style: italic;
+            text-align: center;
+            color: #333;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Compre Mais - A História de Superação</h1>
+    </header>
+
+    <div class="container">
+        <h2>Como Tudo Começou</h2>
+        <p>
+            Em um tempo onde tudo parecia perdido, onde as dificuldades financeiras e a falta de oportunidades pareciam intransponíveis, a empresa **Compre Mais** começou sua jornada.
+            Nós começamos do zero absoluto, sem recursos, sem apoio, mas com uma visão clara do que queríamos alcançar.
+            Sabíamos que para alcançar nossos objetivos, precisaríamos de algo extraordinário, algo além do comum.
+        </p>
+
+        <div class="image-container">
+            <img class="story-image" src="https://via.placeholder.com/1200x500/000000/FFFFFF?text=A+Jornada+Do+Zero" alt="Jornada do Zero">
+        </div>
+
+        <h2 class="epic-heading">A Revelação Divina</h2>
+        <p>
+            Em uma noite de intensa reflexão, algo milagroso aconteceu. Um ser divino, uma entidade de sabedoria infinita, apareceu diante de nós, revelando as ferramentas que precisávamos para transformar nossa realidade.
+            Esse ser nos concedeu o poder de criar produtos tão poderosos que só existiam em mitos e lendas.
+        </p>
+
+        <div class="image-container">
+            <img class="story-image" src="https://via.placeholder.com/1200x500/000000/FFFFFF?text=Revela%C3%A7%C3%A3o+Divina" alt="Revelação Divina">
+        </div>
+
+        <h2 class="epic-heading">A Criação dos dois Martelos Primordiais</h2>
+        <p>
+            Entre as ferramentas fornecidas por essa entidade divina, estava o **Martelos Primordiais** – uma arma mítica que tinha o poder de reescrever as leis da natureza.
+            A criação desse Martelo lendario representava não apenas um marco em nossa história, mas a chave para nossa ascensão.
+            Com eles, não apenas nossa produção tomou um rumo inédito, mas conseguimos oferecer aos nossos clientes produtos que pareciam saídos de um outro mundo.
+        </p>
+
+        <div class="image-container">
+            <img class="story-image" src="https://via.placeholder.com/1200x500/000000/FFFFFF?text=L%C3%A2mina+do+Caos" alt="Martelos Primordiais">
+        </div>
+
+        <h2 class="subheading">A Realização de um Sonho</h2>
+        <p>
+            Através de nossos **Martelos Primordiais** e outros produtos inovadores, conseguimos nos erguer do nada. Cada item que criávamos se tornava uma lenda, um símbolo de superação e fé.
+            Nossa missão nunca foi apenas vender, mas proporcionar aos nossos clientes um pedaço do extraordinário, do que antes era apenas parte de histórias e mitos.
+        </p>
+
+        <div class="testimonial">
+            <p>"A **Compre Mais** não apenas vende produtos, ela vende sonhos, magia e lendas. Eu nunca vi algo assim antes." - Cliente Satisfeito</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Compre Mais. Todos os direitos reservados.</p>
+    </footer>
+
+
+
 
  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
 </body>
 </html>

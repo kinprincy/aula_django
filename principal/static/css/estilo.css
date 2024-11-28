@@ -20,3 +20,10 @@ carousel-item{
   width: 500px;
   height: 300px;
 }
+
+.navbar {
+            background-color: black; /* Define a cor de fundo como preto */
+            padding: 10px; /* Ajuste do espaçamento interno */
+            color: white; /* Cor do texto na navbar */
+            text-align: center; /* Alinha o texto ao centro */
+        }

@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.hashers import check_password
 
 # Create your models here.
 class Cliente(models.Model):
@@ -17,3 +18,6 @@ class Cliente(models.Model):
     senha = models.CharField(max_length=100)
     def __str__(self):
         return self.senha
+    # regra de negocios para verificar  a senha do cliente
+    def check_password(self, senha):
+        return check_password(senha, self.senha)

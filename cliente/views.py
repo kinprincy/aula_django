@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Cliente
 from django.contrib.auth.hashers import make_password
+from django.contrib import messages
 # Create your views here.
 
 
@@ -42,3 +43,26 @@ def update_cliente(request, id):
     cliente.email = vemail
     cliente.save()
     return redirect(fcliente)
+
+def logar(request):
+    if request.method == 'POST':
+        email= request.POST.get("email")
+        senha = request.POST.get("password")
+
+        try:
+            cliente = Cliente.objectos.get(email=email)
+            if cliente.check_password(senha):
+                return redirect('ftelacli')
+            else:
+                return redirect('flogin')
+        except Cliente.DoesNotExist:
+            messages.error(request, 'Credenciais invalidas')
+
+def flogin(request):
+    return render(request, "login.html")
+
+def ftelacli(request):
+    return render(request, "telacliente.html")
+
+
+
