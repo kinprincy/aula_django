@@ -46,11 +46,11 @@ def update_cliente(request, id):
 
 def logar(request):
     if request.method == 'POST':
-        email= request.POST.get("email")
+        email= request.POST.get("username")
         senha = request.POST.get("password")
 
         try:
-            cliente = Cliente.objectos.get(email=email)
+            cliente = Cliente.objects.get(email=email)
             if cliente.check_password(senha):
                 return redirect('ftelacli')
             else:

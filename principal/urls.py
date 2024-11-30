@@ -1,6 +1,7 @@
 from  django.urls import path
 from .views import findex, fhistoria, fcelulares
 
+
 urlpatterns = [
     path('', findex), #chama direto pelo servidor
     path('fhistoria/', fhistoria, name='fhistoria'),

@@ -72,8 +72,8 @@
         <h2>Login</h2>
         <form id="login-form" class="form" action="{% url 'logar' %}" method="POST">
             {% csrf_token %}
-            <input type="text" class="input-field" name="usuario" placeholder="Usuário" required>
-            <input type="password" class="input-field" name="senha" placeholder="Senha" required>
+            <input type="email" class="input-field" name="username" placeholder="Username" required>
+            <input type="password" class="input-field" name="password" placeholder="Password" required>
             <button type="submit" class="login-btn">Entrar</button>
             <a href="{% url 'Fcadcliente' %}" class="text-info center">Cadatre-se</a>
         </form>

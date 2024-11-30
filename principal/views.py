@@ -9,3 +9,5 @@ def fhistoria(request):
 
 def fcelulares(request):
     return render(request, "celulares.html")
+
+
