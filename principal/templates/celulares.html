@@ -106,97 +106,28 @@
     <header>
         <h1>Loja de Produtos</h1>
     </header>
-
-    <div class="container">
-        <!-- Produto 1 -->
-        <div class="produto">
-            <img src="{% static 'img/image_violao.jpg.jpg' %}" alt="Violão">
-            <h2>Violão da yamaha</h2>
-            <p class="preco">R$ 399,99</p>
-            <button>Adicionar Carrinho</button>
-        </div>
-
-        <!-- Produto 2 -->
-        <div class="produto">
-            <img src="{% static 'img/image_sucoL.jpg.jpg' %}" alt="Suco de Laranja">
-            <h2>Suco de Laranja</h2>
-            <p class="preco">R$ 149,90</p>
-            <button>Adicionar Carrinho</button>
-        </div>
-
-        <!-- Produto 3 -->
-        <div class="produto">
-            <img src="{% static 'img/image_cogumelo.jpg.jpg' %}" alt="Cogumelo">
-            <h2>Cogumelo</h2>
-            <p class="preco">R$ 79,50</p>
-            <button>Adicionar Carrinho</button>
-        </div>
-
-        <!-- Produto 4 -->
-        <div class="produto">
-            <img src="{% static 'img/imagen_kurama.jpg.jpg' %}" alt="Kurama">
-            <h2>Kurama</h2>
-            <p class="preco">R$ 120.000,00</p>
-            <button>Adicionar Carrinho</button>
-        </div>
-
-        <!-- Produto 5 -->
-        <div class="produto">
-            <img src="{% static 'img/image_caos.jpg.jpg' %}" alt="Lamina do Caos">
-            <h2>Lamina do Caos</h2>
-            <p class="preco">R$ 1.999.999,99</p>
-            <button>Adicionar Carrinho</button>
-        </div>
-        <!-- Produto 6 -->
-        <div class="produto">
-            <img src="{% static 'img/image_espada_lobo.jpg.jpg' %}" alt="Espada Lobo">
-            <h2>Espada Lobo</h2>
-            <p class="preco">R$ 1.919,59</p>
-            <button>Adicionar Carrinho</button>
-        </div>
-         <div class="produto">
-            <img src="{% static 'img/image_sidadoes.jpg.jpg' %}" alt="Sidadões">
-            <h2>Sidadões</h2>
-            <p class="preco">R$ 1.000.000.000,29</p>
-            <button>Adicionar Carrinho</button>
-        </div>
-         <div class="produto">
-            <img src="{% static 'img/image_radiacao.jpg.jpg' %}" alt="Radiação">
-            <h2>Radiação</h2>
-            <p class="preco">R$ 501.913,22</p>
-            <button>Adicionar Carrinho</button>
-        </div>
-         <div class="produto">
-            <img src="{% static 'img/image_nuven_voadora.jpg.jpg' %}" alt="Nuvem voadora">
-            <h2>Nuvem Voadora</h2>
-            <p class="preco">R$ 1.500,00</p>
-            <button>Adicionar Carrinho</button>
-        </div>
-         <div class="produto">
-            <img src="{% static 'img/image_katanaD.jpg.jpg' %}" alt="Katana Dupla">
-            <h2>Katana Dupla</h2>
-            <p class="preco">R$ 546,59</p>
-            <button>Adicionar Carrinho</button>
-        </div>
-         <div class="produto">
-            <img src="{% static 'img/image_chapel.jpg.jpg' %}" alt="Chapel de Palha">
-            <h2>Chapel de Palha</h2>
-            <p class="preco">R$ 0.000,01</p>
-            <button>Adicionar Carrinho</button>
-        </div>
-         <div class="produto">
-            <img src="{% static 'img/image_carga.jpg.jpg' %}" alt="Carga Autobots">
-            <h2>Carga Autobots</h2>
-            <p class="preco">R$ 1.919,59</p>
-            <button>Adicionar Carrinho</button>
-        </div>
-         <div class="produto">
-            <img src="{% static 'img/image_biblia.jpg.jpg' %}" alt="Biblia Sagrada">
-            <h2>Biblia Sagrada</h2>
-            <p class="preco">R$ 200,33</p>
-            <button>Adicionar Carrinho</button>
-        </div>
+ <div class="container">
+      <div class="row">
+            {% for produto in produtos %}
+                  <div class="col-md-3">
+                      <div class="card; " style="width: 20rem; heigth: auto;">
+                              {% if produto.imagem %}
+                              <img class="card-img-top" src="{{produto.imagem.url}}" alt="{{produto.nome}}" style="width:100; heigth: auto;">
+                              {% endif %}
+                              <div class="card-body">
+                                <h5 class="card-title">Título do card</h5>
+                                <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
+                                <a href="#" class="btn btn-primary">Guarda no Carinho</a>
+                              </div>
+                      </div>
+                </div>
+          {% endfor %}
     </div>
+  </div>
+
+
+
+
 
 </body>
 </html>

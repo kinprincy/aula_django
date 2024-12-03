@@ -41,3 +41,12 @@ def update(request, id):
     produto.quantidade = vquantidade
     produto.save()
     return redirect(fproduto)
+
+def listaprodutos(request):
+    categoria = request.GET.get("categoria")
+    if categoria:
+        produtos = Produto.objects.filter(categoria=categoria)
+    else:
+        produtos = Produto.objects.all()
+
+    return render(request, "celulares.html", {"produtos":produtos})
