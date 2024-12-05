@@ -14,9 +14,10 @@ def salvar(request):
     vdescricao = request.POST.get("descricao")
     vpreco = request.POST.get("preco")
     vquantidade = request.POST.get("quantidade")
+    vcategoria = request.POST.get("categoria")
     vimagem = request.FILES.get("imagem")
     if vnome:
-        Produto.objects.create(nome=vnome, descricao=vdescricao, preco=vpreco, quantidade=vquantidade, imagem=vimagem)
+        Produto.objects.create(nome=vnome, descricao=vdescricao, preco=vpreco, quantidade=vquantidade, categoria=vcategoria ,imagem=vimagem)
     return redirect(fproduto)
 
 def exibir(request, id):

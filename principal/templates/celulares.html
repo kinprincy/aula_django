@@ -86,7 +86,15 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
            <a class="nav-link" href="{% url 'findex' %}" style="background-color: black; color: white;" >Home</a>
            <a class="nav-link" href="{% url 'fhistoria' %}" style="background-color: black; color: white;" >Nossa Historia</a>
-           <a class="nav-link" href="{% url 'fcelulares' %}" style="background-color: black; color: white;" >Produtos</a>
+
+          <li class="=nav-iten dropdown">
+               <a class="nav-link dropdown-toggle" href="{% url 'listaprodutos' %}" id="navbarDropdownMenulink" style="background-color: black; color: white;" data-toggle="dropdown"  role="button" aria-haspopup="true" aria-expanded="false">Produtos</a>
+                   <div class="dropdown-menu" arial-labelledby="navbarDropdownMenuLnk">
+                       <a class="dropdown-item" href="{% url 'listaprodutos' %}?categoria=normais" style="background-color: black; color: white;">Normais</a>
+                       <a class="dropdown-item" href="{% url 'listaprodutos' %}?categoria=miticos" style="background-color: black; color: white;">Miticos</a>
+                   </div>
+          </li>
+
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -109,15 +117,15 @@
  <div class="container">
       <div class="row">
             {% for produto in produtos %}
-                  <div class="col-md-3">
+                  <div class="col-md-4">
                       <div class="card; " style="width: 20rem; heigth: auto;">
                               {% if produto.imagem %}
                               <img class="card-img-top" src="{{produto.imagem.url}}" alt="{{produto.nome}}" style="width:100; heigth: auto;">
                               {% endif %}
                               <div class="card-body">
-                                <h5 class="card-title">Título do card</h5>
-                                <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
-                                <a href="#" class="btn btn-primary">Guarda no Carinho</a>
+                                <h5 class="card-title">{{produto.nome}}</h5>
+                                <p class="card-text">{{produto.preco}}</p>
+                                <a href="#" class="btn btn-primary">Comprar</a>
                               </div>
                       </div>
                 </div>

@@ -4,16 +4,100 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
     <link rel="stylesheet" href="styles.css">
     <title>Lojas Compre Mais</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .produto {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 15px;
+            width: 250px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .produto:hover {
+            transform: translateY(-10px);
+        }
+
+        .produto img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .produto h2 {
+            font-size: 18px;
+            margin: 15px 0;
+        }
+
+        .produto .preco {
+            font-size: 20px;
+            font-weight: bold;
+            color: #007BFF;
+        }
+
+        .produto button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .produto button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
            <a class="nav-link " href="{% url 'findex' %}" style="background-color: black; color: white;" >Home</a>
            <a class="nav-link " href="{% url 'fhistoria' %}" style="background-color: black; color: white;" >Nossa Historia</a>
-           <a class="nav-link " href="{% url 'listaprodutos' %}" style="background-color: black; color: white;" >Produtos</a>
+
+           <li class="=nav-iten dropdown">
+               <a class="nav-link dropdown-toggle" href="{% url 'listaprodutos' %}" id="navbarDropdownMenulink" style="background-color: black; color: white;" data-toggle="dropdown"  role="button" aria-haspopup="true" aria-expanded="false">Produtos</a>
+                   <div class="dropdown-menu" arial-labelledby="navbarDropdownMenuLnk">
+                       <a class="dropdown-item" href="{% url 'listaprodutos' %}?categoria=normais" style="background-color: black; color: white;" >Normais</a>
+                       <a class="dropdown-item" href="{% url 'listaprodutos' %}?categoria=miticos" style="background-color: black; color: white;" >Miticos</a>
+                   </div>
+           </li>
+
+
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
     <span class="navbar-toggler-icon"></span>
@@ -32,9 +116,11 @@
         <button class="btn btn-primary" type="submit " type="background-color: black; color: white;">Login</button>
     </form>
 </nav>
-    <h1 class="text-center"></h1>
-<h1 class="text-center" style="background-color: black; color: white;">Loja Compre Mais</h1>
-    <br>
+<header>
+        <h1>Loja Compe Mais</h1>
+    </header>
+ <div class="container">
+      <div class="row">
 
     <div id="carouselExampleControls" class="carousel slide " data-ride="carousel">
   <div class="carousel-inner">

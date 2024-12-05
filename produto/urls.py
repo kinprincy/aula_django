@@ -28,4 +28,5 @@ urlpatterns = [
     path('update/<int:id>', update, name='update'),
     path('listaprodutos/', listaprodutos, name='listaprodutos')
 
+
 ]
