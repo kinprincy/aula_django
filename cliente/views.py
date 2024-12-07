@@ -23,7 +23,7 @@ def salvar_cliente(request):
         Cliente.objects.create(nome=vnome, telefone=vtelefone, email=vemail, senha=senha_criptografada)
     return redirect(fcliente)
 
-def exibir_cliente(request, id):
+def exibir_cliente(request, id=None):
     if id is None:
         #Usa o ID do cliente da sessão se não foi passado na URL
         id = request.session.get('cliente_id')

@@ -120,12 +120,16 @@
                   <div class="col-md-4">
                       <div class="card; " style="width: 20rem; heigth: auto;">
                               {% if produto.imagem %}
-                              <img class="card-img-top" src="{{produto.imagem.url}}" alt="{{produto.nome}}" style="width:100; heigth: auto;">
+                              <img class="card-img-top" src="{{produto.imagem.url}}" alt="{{produto.nome}}" style="width:100; heigth: auto; border-style:outset">
                               {% endif %}
-                              <div class="card-body">
+                              <div class="card-body" style="border-style:ridge; background-color: PowderBlue" >
                                 <h5 class="card-title">{{produto.nome}}</h5>
                                 <p class="card-text">{{produto.preco}}</p>
-                                <a href="#" class="btn btn-primary">Comprar</a>
+                                <form action="{% url 'addcarrinho' produto.id %}" method="post">
+                                    {% csrf_token %}
+                                    <input type="nuber" name="quantidae" min="1" value="1" style="background-color: black; color: white;">
+                                    <button type="submit" class="btn ntn-primary" style="background-color: gray; color: white;">Comprar</button>
+                                </form>
                               </div>
                       </div>
                 </div>

@@ -17,28 +17,36 @@
 
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação" style="background-color: black; color: white;">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
+         <li class="=nav-iten dropdown">
+               <a class="nav-link dropdown-toggle" href="{% url 'listaprodutos' %}" id="navbarDropdownMenulink" style="background-color: black; color: white;" data-toggle="dropdown"  role="button" aria-haspopup="true" aria-expanded="false">Produtos</a>
+                   <div class="dropdown-menu" arial-labelledby="navbarDropdownMenuLnk">
+                       <a class="dropdown-item" href="{% url 'listaprodutos' %}?categoria=normais" style="background-color: black; color: white;">Normais</a>
+                       <a class="dropdown-item" href="{% url 'listaprodutos' %}?categoria=miticos" style="background-color: black; color: white;">Miticos</a>
+                   </div>
+          </li>
+
 
       <li class="nav-item">
-  <a class="nav-link" href="{% url 'exibir_cliente' %}">Dados Pessoais</a>
+  <a class="nav-link" href="{% url 'exibir_cliente' %}" style="background-color: black; color: white;">Dados Pessoais</a>
 </li>
       <!-- TRABALHAR A SESSÃO DO USUÁRIO -->
-       <ul class="navbar-nav ml-auto">
+       <ul class="navbar-nav ml-auto" style="background-color: black; color: white;">
         {% if request.session.cliente_nome %}
 
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'logout' %}">Sair</a>
+            <a class="nav-link" href="{% url 'logout' %}" style="background-color: black; color: white;">Sair</a>
           </li>
            <li class="nav-item">
-            <span class="navbar-text">Bem-vindo, {{ request.session.cliente_nome }}!</span>
+            <span class="navbar-text" style="background-color: black; color: white;">Bem-vindo, {{ request.session.cliente_nome }}!</span>
           </li>
         {% else %}
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'flogin' %}">Entrar</a>
+            <a class="nav-link" href="{% url 'flogin' %}" style="background-color: black; color: white;">Entrar</a>
           </li>
         {% endif %}
       </ul>
