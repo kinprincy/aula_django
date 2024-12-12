@@ -71,6 +71,7 @@ def logar(request):
                 return redirect('flogin')
         except Cliente.DoesNotExist:
             messages.error(request, 'Credenciais invalidas')
+            return redirect('flogin')
 
 def logout(request): #FAZER LOGOUT DO CLIENTE
     try:

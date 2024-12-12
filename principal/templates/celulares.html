@@ -84,14 +84,14 @@
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-           <a class="nav-link" href="{% url 'findex' %}" style="background-color: black; color: white;" >Home</a>
-           <a class="nav-link" href="{% url 'fhistoria' %}" style="background-color: black; color: white;" >Nossa Historia</a>
+           <a class="nav-link" href="{% url 'findex' %}" style="background-color: black; color: white; border-style:ridge" >Home</a>
+           <a class="nav-link" href="{% url 'fhistoria' %}" style="background-color: black; color: white; border-style:ridge" >Nossa Historia</a>
 
           <li class="=nav-iten dropdown">
-               <a class="nav-link dropdown-toggle" href="{% url 'listaprodutos' %}" id="navbarDropdownMenulink" style="background-color: black; color: white;" data-toggle="dropdown"  role="button" aria-haspopup="true" aria-expanded="false">Produtos</a>
+               <a class="nav-link dropdown-toggle" href="{% url 'listaprodutos' %}" id="navbarDropdownMenulink" style="background-color: black; color: white; border-style:ridge" data-toggle="dropdown"  role="button" aria-haspopup="true" aria-expanded="false">Produtos</a>
                    <div class="dropdown-menu" arial-labelledby="navbarDropdownMenuLnk">
-                       <a class="dropdown-item" href="{% url 'listaprodutos' %}?categoria=normais" style="background-color: black; color: white;">Normais</a>
-                       <a class="dropdown-item" href="{% url 'listaprodutos' %}?categoria=miticos" style="background-color: black; color: white;">Miticos</a>
+                       <a class="dropdown-item" href="{% url 'listaprodutos' %}?categoria=normais" style="background-color: black; color: white; border-style:ridge">Normais</a>
+                       <a class="dropdown-item" href="{% url 'listaprodutos' %}?categoria=miticos" style="background-color: black; color: white; border-style:ridge">Miticos</a>
                    </div>
           </li>
 
@@ -109,6 +109,9 @@
          <form class="from-inline my-2 my-lg-0" action="{% url 'flogin' %}" type="background-color: black; color: white;">
         <button class="btn btn-primary" type="submit " type="background-color: black; color: white;">Login</button>
     </form>
+
+
+
 </nav>
 
     <header>
