@@ -95,8 +95,6 @@
                        <a class="dropdown-item" href="{% url 'listaprodutos' %}?categoria=normais" style="background-color: black; color: white; border-style:ridge;">Normais</a>
                        <a class="dropdown-item" href="{% url 'listaprodutos' %}?categoria=miticos" style="background-color: black; color: white; border-style:ridge;" >Miticos</a>
                    </div>
-           </li>
-
 
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
@@ -113,15 +111,27 @@
       </li>
        <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                <a class="nav-link" href="{% url 'exibir_carrinho' %}">Carrinho</a>
+                <a class="nav-link" href="{% url 'exibir_carrinho' %}" style="background-color: black; color: white; border-style:ridge">Carrinho</a>
            </li>
 
 
   </div>
-         <form class="from-inline my-2 my-lg-0" action="{% url 'flogin' %}" type="background-color: black; color: white;">
-        <button class="btn btn-primary" type="submit " type="background-color: black; color: white;">Login</button>
-    </form>
+           <!-- TRABALHAR A SESSÃO DO USUÁRIO -->
+       <ul class="navbar-nav ml-auto">
+        {% if request.session.cliente_nome %}
 
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'logout' %}" style="background-color: blue; color: white; border-style:ridge">Sair</a>
+          </li>
+           <li class="nav-item">
+            <span class="navbar-text" style="background-color: gray; color: white; border-style:ridge">Bem-vindo, {{ request.session.cliente_nome }}!</span>
+          </li>
+        {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'flogin' %}" style="background-color: blue; color: white; border-style:ridge">Entrar</a>
+          </li>
+        {% endif %}
+      </ul>
 
 
 </nav>
